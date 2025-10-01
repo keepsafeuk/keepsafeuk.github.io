@@ -1,0 +1,133 @@
+/* ===========================
+   Keep Safe UK — style.css
+   =========================== */
+
+/* ---------- THEME / VARIABLES ---------- */
+:root{
+  --brand-dark: #003366;    /* primary dark blue */
+  --brand-mid:  #0055a5;    /* hover/variant */
+  --accent:     #00aEEF;    /* accent blue */
+  --muted:      #7b8590;
+  --bg:         #0a0f18;
+  --card-bg:    rgba(255,255,255,0.03);
+  --max-width: 1100px;
+  --site-padding: 20px;
+  --radius: 10px;
+  --wrap-pad: 24px;
+}
+
+/* ---------- RESET ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg,#041025 0%, #071228 100%);
+  color: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.45;
+  padding-bottom: 60px;
+}
+
+/* ---------- LAYOUT HELPERS ---------- */
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--wrap-pad);
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(5,9,14,0.45);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.site-header .wrap {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  height:72px;
+}
+.brand img { display:block; max-height:50px; }
+.main-nav { margin-left: auto; display:flex; gap:18px; align-items:center; }
+.main-nav a { color: #dfe9f3; text-decoration:none; font-weight:600; font-size:0.95rem; }
+.cta-link { background: var(--brand-dark); color:#fff; padding:8px 12px; border-radius:8px; }
+.email { margin-left: 14px; color: var(--accent); text-decoration:none; font-weight:700; }
+.nav-toggle { display:none; background:none; border: none; color:#fff; font-size:20px; }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 72vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  margin-bottom: 18px;
+}
+.hero__image { width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0; z-index:0; }
+.hero__overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(3,6,10,0.55), rgba(3,6,10,0.55)); z-index:1; }
+.hero__inner { position: relative; z-index: 2; text-align:center; padding: 40px 12px; }
+.hero__headline { font-size: clamp(28px, 4.8vw, 44px); line-height:1.03; font-weight:700; margin-bottom:12px; color:#fff; text-shadow: 0 3px 20px rgba(0,0,0,0.6); }
+.hero__sub { color: #cfe9ff; margin-bottom:18px; font-size:1.05rem; }
+.hero__ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:16px; }
+.btn { display:inline-block; text-decoration:none; padding:12px 18px; border-radius:8px; font-weight:700; transition: transform .12s ease, box-shadow .12s ease; }
+.btn--primary { background: var(--brand-dark); color:#fff; box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
+.btn--primary:hover { transform: translateY(-2px); background: var(--brand-mid); }
+.btn--ghost { background: rgba(255,255,255,0.06); color:#fff; border:1px solid rgba(255,255,255,0.06); }
+.hero__trust { color: var(--muted); margin-top:8px; font-size:0.95rem; }
+
+/* ---------- TRUST STRIP ---------- */
+.trust-strip { padding:12px 0; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02); }
+.trust-strip .wrap { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+.trust-left { display:flex; gap:14px; align-items:center; color: #dfe9f3; font-size:0.95rem; }
+.trust-logos img { opacity:0.9; filter:grayscale(100%); height:28px; margin-left:10px; }
+
+/* ---------- SERVICES ---------- */
+.services { padding:48px 0; }
+.services h2 { font-size:1.6rem; margin-bottom:8px; color:#fff; }
+.services .intro { color: #c5d6e8; margin-bottom:20px; }
+.cards { display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; }
+.card { background: var(--card-bg); padding:20px; border-radius:12px; flex:1 1 300px; min-width:250px; box-shadow: 0 6px 20px rgba(3,7,12,0.35); }
+.card h3 { color: var(--accent); margin-bottom:8px; }
+.card p { color:#d7e6f6; margin-bottom:12px; }
+.card-cta .link-cta { color:var(--accent); font-weight:700; text-decoration:none; }
+
+/* ---------- ABOUT / REASONS ---------- */
+.about { padding:40px 0; }
+.reasons { list-style:none; margin-top:12px; display:grid; gap:10px; color:#d7e6f6; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+/* ---------- CONTACT ---------- */
+.contact { padding:48px 0; }
+.contact-wrap { display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; max-width: var(--max-width); margin: 0 auto; }
+.contact-left h2 { font-size:1.8rem; margin-bottom:8px; }
+.contact-lead { color:#cfe9ff; margin-bottom:12px; }
+.contact-trust { list-style:none; margin:0 0 16px 0; color:#d7e6f6; padding-left:0; display:grid; gap:6px; }
+.contact-form { background: rgba(255,255,255,0.03); padding:18px; border-radius:10px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.contact-form label { display:block; font-size:0.9rem; margin-bottom:6px; color:#dfe9f3; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea {
+  width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); color:#fff; margin-bottom:12px;
+}
+.contact-form textarea { min-height:120px; resize:vertical; }
+.checkbox { display:flex; gap:10px; align-items:center; color:#dfe9f3; margin-bottom:12px; font-size:0.95rem; }
+.full-width { width:100%; display:inline-block; }
+
+/* ---------- FOOTER ---------- */
+.site-footer { margin-top:36px; padding:20px 0; background: rgba(0,0,0,0.25); border-top:1px solid rgba(255,255,255,0.03); }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; color:#c7d8ea; font-size:0.95rem; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px) {
+  .cards { justify-content:center; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .trust-logos { order:2; width:100%; text-align:right; }
+}
+@media (max-width: 700px) {
+  .main-nav { display:none; }
+  .nav-toggle { display:block; margin-left:auto; }
+  .hero { min-height:58vh; }
+  .hero__headline { font
