@@ -45,16 +45,34 @@
 
   <!-- Contact -->
   <section id="contact" class="contact">
-    <h2>Request a Free Site Survey</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <textarea name="message" placeholder="Your Message"></textarea>
-      <label><input type="checkbox" name="gdpr" required> I consent to Keep Safe UK contacting me about this enquiry.</label>
-      <button type="submit" class="btn-primary">Request my free survey</button>
-    </form>
-  </section>
+  <h2>Request a Free Site Survey</h2>
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" placeholder="Your Message"></textarea>
+
+    <label>
+      <input type="checkbox" name="gdpr" required> I consent to Keep Safe UK contacting me about this enquiry.
+    </label>
+
+    <!-- Hidden fields for Formspree -->
+    <input type="hidden" name="_subject" value="Keep Safe UK Website Contact Form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://keepsafeuk.github.io/thank-you.html">
+
+    <button type="submit" class="btn-primary">Request my free survey</button>
+  </form>
+</section>
+
 
   <!-- Footer -->
   <footer>
@@ -62,4 +80,5 @@
   </footer>
 </body>
 </html>
+
 
